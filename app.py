@@ -11,6 +11,7 @@ def compute_outputs(data, slider1, slider2):
     return data, summary
 
 # Streamlit app
+st.set_page_config(layout="wide")
 st.title("Interactive Table and Sliders")
 
 # Editable table
