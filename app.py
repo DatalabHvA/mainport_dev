@@ -14,20 +14,22 @@ def compute_outputs(data, slider1, slider2):
 st.set_page_config(layout="wide")
 st.title("Interactive Table and Sliders")
 
+cols = st.columns(2)
+
 # Editable table
-st.header("Editable Table")
+cols[0].header("Editable Table")
 default_data = {
     "Category": ["A", "B", "C"],
     "Value": [10, 20, 30],
 }
 df = pd.DataFrame(default_data)
 
-edited_data = st.data_editor(df, num_rows="dynamic", use_container_width=True)
+edited_data = cols[0].data_editor(df, num_rows="dynamic", use_container_width=True)
 
 # Sliders for additional input
-st.header("Sliders")
-slider1 = st.slider("Multiplier (Slider 1)", min_value=0.0, max_value=5.0, value=1.0)
-slider2 = st.slider("Offset (Slider 2)", min_value=0, max_value=20, value=0)
+cols[1].header("Sliders")
+slider1 = cols[1].slider("Multiplier (Slider 1)", min_value=0.0, max_value=5.0, value=1.0)
+slider2 = cols[1].slider("Offset (Slider 2)", min_value=0, max_value=20, value=0)
 
 # Compute and display outputs
 if st.button("Compute Outputs"):
