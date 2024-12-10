@@ -21,7 +21,7 @@ default_data = {
 }
 df = pd.DataFrame(default_data)
 
-edited_data = st.experimental_data_editor(df, num_rows="dynamic", use_container_width=True)
+edited_data = st.data_editor(df, num_rows="dynamic", use_container_width=True)
 
 # Sliders for additional input
 st.header("Sliders")
